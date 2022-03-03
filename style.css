@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@300&family=Noto+San+JP:wght@100&family=Noto+Sans+KR:wght@700;900&family=Roboto&display=swap');
+:root{
+    --theme-pri : white;
+    --theme-sec : red;
+    --theme-ter : blue;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    /* box-sizing: border-box; */
+}
+html {
+    font-size: 20px;
+    font-family: 'Montserrat', sans-serif;
+}
+#sec1 {
+    background-image: url('developer_img1.jpg');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    z-index: 1;
+    color: white;
+}
+#sec1::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: 0.6;
+    z-index: -1;
+}
+.head {
+    /* border: 2px solid red; */
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: left;
+    justify-content: center;
+    flex-direction: column;
+    /* background-color: red; */
+    text-align: left;
+}
+#headName {
+    margin: 0 10%;
+}
+#headName h1 {
+    display: block;
+    width: fit-content;
+    font-size: 2rem;
+    position: relative;
+    color: transparent;
+    animation: text-reveal 1s ease forwards;
+    /* animation-delay: 1.5s; */
+}
+#headName h1:nth-child(1){
+    animation-delay: 1.5s;
+}
+#headName h1:nth-child(2){
+    animation-delay: 2.5s;
+}
+@keyframes text-reveal{
+    100%{
+        color: var(--theme-pri);
+    }
+}
+
+#headName h1 span{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0%;
+    background-color: var(--theme-sec);
+    animation: text-reaveal-box 1s ease;
+    /* animation-delay: 1s; */
+}
+#headName h1:nth-child(1) span{
+    animation-delay: 1s;
+}
+#headName h1:nth-child(2) span{
+    animation-delay: 2s;
+}
+@keyframes text-reaveal-box{
+    0%{
+        width: 0;
+        left: 0;
+    }
+    50%{
+        width: 100%;
+        left: 0;
+    }
+    100%{
+        width: 0;
+        left: 100%;
+    }
+}
+#headButton {
+    display: inline-block;
+    text-decoration: none;
+    color: red;
+    border: 2px solid red;
+    width: min-content;
+    padding: 1% 2%;
+    margin: 1% 10%;
+    background-color: transparent;
+    font-weight: bold;
+    font-size: .8rem;
+    text-transform: uppercase;
+    letter-spacing: .1rem;
+    transition: .3s ease;
+    transition-property: background-color, color;
+}
+#headButton:hover{
+    /* border: 2px solid gray; */
+    background-color: rgba(255, 0, 0, 0.5);
+    color: white;
+}
